@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block masthead %} 
+<header class="masthead bg-primary text-white text-center">
+            
+    <div class="container d-flex align-items-center flex-column" >
+        
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0">Welcome to Cook Club</h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-utensils fa-2x"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-0">This is the 'All Recipes' page</p>
+        
+        <div class="input-group input-group-lg masthead-subheading font-weight-light mb-0" style="margin-top: 5%;">
+        
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Search for your favorite recipes">
+            <span class="input-group-text" id="inputGroup-sizing-lg">Search</span>
+          </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %} 
+<div class="container">
+    <!-- Trending Recipes Heading-->
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Trending Recipes</h2>
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-hamburger"></i></div>
+        <div class="divider-custom-line"></div>
+    </div>
+    <!-- Recipe Grid Items-->
+    <div class="row justify-content-center">
+        <!-- Recipe Item 1-->
+        <div class="col-md-6 col-lg-4 mb-5">
+            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white">Fantastic Fish Fingers</div>
+                </div>
+                <img class="img-fluid" src="https://i.ibb.co/dr918zQ/floss-fantastic-fish-31623-16x9.jpg" alt="..." />
+            </div>
+        </div>
+        <!-- Recipe Item 2-->
+        <div class="col-md-6 col-lg-4 mb-5">
+            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white">Easy Vegetable Stir-fry</div>
+                </div>
+                <img class="img-fluid" src="https://i.ibb.co/5MQhTG9/sachas-stir-fry-17077-16x9.jpg" alt="..." />
+            </div>
+        </div>
+        <!-- Recipe Item 3-->
+        <div class="col-md-6 col-lg-4 mb-5">
+            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white">Eggy Bread</div>
+                </div>
+                <img class="img-fluid" src="https://i.ibb.co/YdCV27C/eggy-bread-11076-16x9.jpg" alt="..." />
+            </div>
+        </div>
+        <!-- Recipe Item 4-->
+        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white">Kids’ Minestrone Soup</div>
+                </div>
+                <img class="img-fluid" src="https://i.ibb.co/THr3BDL/kids-minestrone-soup-40496-16x9.jpg" alt="..." />
+            </div>
+        </div>
+        <!-- Recipe Item 5-->
+        <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white">Veggie Bean Burgers</div>
+                </div>
+                <img class="img-fluid" src="https://i.ibb.co/Kr5b575/veggie-bean-burgers-for-53280-16x9.jpg" alt="..." />
+            </div>
+        </div>
+        <!-- Recipe Item 6-->
+        <div class="col-md-6 col-lg-4">
+            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white">Veggie Crumble</div>
+                </div>
+                <img class="img-fluid" src="https://i.ibb.co/jTDYb1W/veggie-crumble-28446-16x9.jpg" alt="..." />
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+
+{% endblock %}
