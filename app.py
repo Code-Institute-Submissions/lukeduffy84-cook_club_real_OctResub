@@ -30,6 +30,9 @@ def remove_recipe():
 def change_recipe():
     return render_template('change_recipe.html')
 
+@app.route('/view_recipe')
+def view_recipe():
+    return render_template('view_recipe.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
