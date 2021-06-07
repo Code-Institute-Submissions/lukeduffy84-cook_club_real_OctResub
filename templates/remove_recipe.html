@@ -16,11 +16,12 @@
         <!-- Masthead Subheading-->
         
         
-        <div class="input-group input-group-lg masthead-subheading font-weight-light mb-0" >
-        
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Search your favorite recipes">
-            <span class="input-group-text" id="inputGroup-sizing-lg">Search</span>
-          </div>
+        <form action="{{ url_for('search_api') }}" method="POST" enctype="multipart/form-data">
+            <div class="input-group input-group-lg masthead-subheading font-weight-light mb-0" style="margin-top: 5%;">
+                <input type="text" name="searchstring" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Search for your favorite recipes" size="50">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+              </div>
+            </form>
     </div>
 </header>
 {% endblock %}
