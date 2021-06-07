@@ -16,11 +16,12 @@
         <!-- Masthead Subheading-->
         
         
-        <div class="input-group input-group-lg masthead-subheading font-weight-light mb-0" >
-        
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Search your favorite recipes">
-            <span class="input-group-text" id="inputGroup-sizing-lg">Search</span>
-          </div>
+        <form action="{{ url_for('search_api') }}" method="POST" enctype="multipart/form-data">
+            <div class="input-group input-group-lg masthead-subheading font-weight-light mb-0" style="margin-top: 5%;">
+                <input type="text" name="searchstring" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Search for your favorite recipes" size="50">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+              </div>
+        </form>
     </div>
 </header>
 {% endblock %}
@@ -39,137 +40,21 @@
     <!-- Recipe Grid Items-->
     <div class="row justify-content-center">
         
+        {% for d in result %}
         <!-- Recipe Item 1-->
         <div class="col-md-6 col-lg-4 mb-5">
             <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#">
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                    <div class="portfolio-item-caption-content text-center text-white">Chicken Goujons</div>
+                    <a href="{{  url_for('view_recipe', recipieid=d.id)  }}"> <div class="portfolio-item-caption-content text-center text-white">{{d.recipeName}}</div></a>
                 </div>
-                <img class="img-fluid" src="https://i.ibb.co/SRyCc11/chickengoujons-82608-16x9.jpg" >
+                <img class="img-fluid" src="{{d.imageUrl}}" >
             </div>
         </div>
-        
-        <!-- Recipe Item 2-->
-        <div class="col-md-6 col-lg-4 mb-5">
-            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#">
-                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                    <div class="portfolio-item-caption-content text-center text-white">Dauphino Potatoes</div>
-                </div>
-                <img class="img-fluid" src="https://i.ibb.co/x2B50pR/dauphinoisepotatoes-90205-16x9.jpg" alt="..." />
-            </div>
-        </div>
-        <!-- Recipe Item 3-->
-        <div class="col-md-6 col-lg-4 mb-5">
-            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#">
-                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                    <div class="portfolio-item-caption-content text-center text-white">Upside-down Cake</div>
-                </div>
-                <img class="img-fluid" src="https://i.ibb.co/HxKqfBw/ginger-and-pear-61641-16x9.jpg" alt="..." />
-            </div>
-        </div>
-        <!-- Recipe Item 4-->
-        <div class="col-md-6 col-lg-4 mb-5">
-            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#">
-                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                    <div class="portfolio-item-caption-content text-center text-white">Yorkshire Pudding</div>
-                </div>
-                <img class="img-fluid" src="https://i.ibb.co/Dkw8qdZ/Recipe-photography.jpg" alt="..." />
-            </div>
-        </div>
-        <!-- Recipe Item 5-->
-        <div class="col-md-6 col-lg-4 mb-5">
-            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#">
-                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                    <div class="portfolio-item-caption-content text-center text-white">Guacamole</div>
-                </div>
-                <img class="img-fluid" src="https://i.ibb.co/4SySMDJ/guacamoleandtortilla-84510-16x9.jpg" alt="..." />
-            </div>
-        </div>
-        <!-- Recipe Item 6-->
-        <div class="col-md-6 col-lg-4 mb-5">
-            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#">
-                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                    <div class="portfolio-item-caption-content text-center text-white">Macaroni Cheese</div>
-                </div>
-                <img class="img-fluid" src="https://i.ibb.co/MDPq21D/mac-n-cheese-70611-16x9.jpg" alt="..." />
-            </div>
-        </div>
+        {% endfor %}
         
     </div>
     
 </div>
-
-<div class="container">
-    <!-- Trending Recipes Heading-->
-    
-    <!-- Icon Divider-->
-    <div class="divider-custom">
-        <div class="divider-custom"></div>
-        
-        <div class="divider-custom"></div>
-    </div>
-    <!-- Recipe Grid Items-->
-    <div class="row justify-content-center">
-        
-        <!-- Recipe Item 7-->
-        <div class="col-md-6 col-lg-4 mb-5">
-            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#">
-                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                    <div class="portfolio-item-caption-content text-center text-white">Fantastic Fish Fingers</div>
-                </div>
-                <img class="img-fluid" src="https://i.ibb.co/dr918zQ/floss-fantastic-fish-31623-16x9.jpg" alt="..." />
-            </div>
-        </div>
-        <!-- Recipe Item 8-->
-        <div class="col-md-6 col-lg-4 mb-5">
-            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#">
-                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                    <div class="portfolio-item-caption-content text-center text-white">Easy Vegetable Stir-fry</div>
-                </div>
-                <img class="img-fluid" src="https://i.ibb.co/5MQhTG9/sachas-stir-fry-17077-16x9.jpg" alt="..." />
-            </div>
-        </div>
-        <!-- Recipe Item 9-->
-        <div class="col-md-6 col-lg-4 mb-5">
-            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#">
-                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                    <div class="portfolio-item-caption-content text-center text-white">Eggy Bread</div>
-                </div>
-                <img class="img-fluid" src="https://i.ibb.co/YdCV27C/eggy-bread-11076-16x9.jpg" alt="..." />
-            </div>
-        </div>
-        <!-- Recipe Item 10-->
-        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#">
-                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                    <div class="portfolio-item-caption-content text-center text-white">Kids’ Minestrone Soup</div>
-                </div>
-                <img class="img-fluid" src="https://i.ibb.co/THr3BDL/kids-minestrone-soup-40496-16x9.jpg" alt="..." />
-            </div>
-        </div>
-        <!-- Recipe Item 11-->
-        <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#">
-                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                    <div class="portfolio-item-caption-content text-center text-white">Veggie Bean Burgers</div>
-                </div>
-                <img class="img-fluid" src="https://i.ibb.co/Kr5b575/veggie-bean-burgers-for-53280-16x9.jpg" alt="..." />
-            </div>
-        </div>
-        <!-- Recipe Item 12-->
-        <div class="col-md-6 col-lg-4">
-            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#">
-                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                    <div class="portfolio-item-caption-content text-center text-white">Veggie Crumble</div>
-                </div>
-                <img class="img-fluid" src="https://i.ibb.co/jTDYb1W/veggie-crumble-28446-16x9.jpg" alt="..." />
-            </div>
-        </div>
-        
-    </div>
-    
-</div>
-    
    
   
   
