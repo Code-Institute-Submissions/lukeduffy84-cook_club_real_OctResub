@@ -16,11 +16,12 @@
         <!-- Masthead Subheading-->
         
         
-        <div class="input-group input-group-lg masthead-subheading font-weight-light mb-0" >
-        
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Search your favorite recipes">
-            <span class="input-group-text" id="inputGroup-sizing-lg">Search</span>
-          </div>
+        <form action="{{ url_for('search_api') }}" method="POST" enctype="multipart/form-data">
+          <div class="input-group input-group-lg masthead-subheading font-weight-light mb-0" style="margin-top: 5%;">
+              <input type="text" name="searchstring" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Search for your favorite recipes" size="50">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+          </form>
     </div>
 </header>
 {% endblock %}
@@ -35,61 +36,38 @@
         <div class="col-8"></div>
         <div class="card " style="background-color: white;">
             <div class="card-header" >
-              <h1 class="recipe-title text-secondary">Upside-down Cake</h1>
+              <h1 class="recipe-title text-secondary">{{result.recipeName}}</h1>
             </div>
-           <img
-                       src="https://i.ibb.co/HxKqfBw/ginger-and-pear-61641-16x9.jpg"
-                       class="card-img-top"
-                       alt="..."
-                     />
+           <img src="{{result.imageUrl}}" class="card-img-top" alt="..."/>
      
            <div class="card-body">
                  <!-- 'Uploaded by' username Subheading-->
                        <p class="card-text">
-                         <h6 class="text-muted">Uploaded by Tom Smith</h6>
+                         <h6 class="text-muted">Uploaded by {{result.username}}</h6>
                        </p>
                 <!-- Required Ingredients Section-->
                 <ul class="required-ingredients">
                   <h2 class="section-title text-secondary">Required Ingredients</h2>
-                  <li>Butter</li>
-                  <li>Milk</li>
-                  <li>Flour</li>
-                  <li>Sugar</li>
-                  <li>Lemon</li>
+                  {% for d in result.ingredients %}
+                  <li>{{d}}</li>
+                  {% endfor %}
                 </ul>
                <!-- Cooking Instructions Section-->
                 <ul class="cooking-instructions">
                 <h2 class="section-title text-secondary">Cooking Instructions</h2>
-                  <p> Place instructions in here.
-     
-     
-     
-     
-     
-     
-     
-                 </p>
-               
-           
-     
-     
-     
-     
-     
+                  <p style="color: black;">{{result.instructions}}</p>
            </div>
-     
-     
-     </div>
-        
-        
-        
-              
-        <div class="col"></div>
+     </div>   
+        <div class="col">
+          {% if islogin %}
+          <div class="add-button">
+            <a href="{{ url_for('change_recipe',recipieid=result.id) }}" class="btn btn-primary">Edit</a>
+            <a href="{{ url_for('remove_recipe',recipieid=result.id) }}" class="btn btn-danger">Delete</a>
+        </div>
+        {% endif %}
+          
+        </div>
     </div>
-    
-
-
-
 
 </div>
   
