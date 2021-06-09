@@ -1,6 +1,6 @@
 ![Imgur](https://imgur.com/ktzc6jU.jpg)
 
-# Cook Club: The online Cookbook
+# Cook Club: The Online Cookbook
 
 
 In a world with rapidly changing culinary tastes and diets, this project was created with the goal of making it easy to share original and healthy recipes online. This website was developed for the target audience of amateur chefs who are able to use the platform to share their creative side in the kitchen. 
@@ -42,20 +42,20 @@ In a world with rapidly changing culinary tastes and diets, this project was cre
 #### Color Scheme
 
 For my website I used the 'Canva' Pallete generator service to ensure a minimailistic, yet eye-catching and bright color scheme for my website.
-![Imgur](https://imgur.com/mDp6Qip)
+![Imgur](https://imgur.com/mDp6Qip.jpg)
 
 
 #### Wireframes
 
-![Home Page](https://imgur.com/1zFfsZR)
+![Home Page](https://imgur.com/1zFfsZR.png)
 
-![All Recipes page](https://imgur.com/8gKrdRN)
+![All Recipes page](https://imgur.com/8gKrdRN.png)
 
-![Register Page](https://imgur.com/MRRNYR9)
+![Register Page](https://imgur.com/MRRNYR9.png)
 
-![Upload Recipe Page](https://imgur.com/0wKGM3H)
+![Upload Recipe Page](https://imgur.com/0wKGM3H.png)
 
-![View Recipe Page](https://imgur.com/8ZDxI8Q)
+![View Recipe Page](https://imgur.com/8ZDxI8Q.png)
 
 
 #### Technoliges Used in Project
