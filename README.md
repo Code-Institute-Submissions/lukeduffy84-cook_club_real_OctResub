@@ -1,6 +1,6 @@
-<p text-align ="center"><img src="https://imgur.com/ktzc6jU" width="100" height="100" ></p>
+![Imgur](https://imgur.com/ktzc6jU)
 
-<hr>![] # [Cook Club]<hr>
+#Cook Club: The online Cookbook
 
 
 In a world with rapidly changing culinary tastes and diets, this project was created with the goal of making it easy to share original and healthy recipes online. This website was developed for the target audience of amateur chefs who are able to use the platform to share their creative side in the kitchen. 
@@ -16,7 +16,7 @@ In a world with rapidly changing culinary tastes and diets, this project was cre
 * [Credits and References](#credits)
 
 
-# UX<hr>
+# UX
 
 ## User Goals<hr>
 
@@ -37,12 +37,32 @@ In a world with rapidly changing culinary tastes and diets, this project was cre
 - Allows logged in users to sign out of their profile on Cook Club by clicking on the 'Log Out' button within the navbar.
 
 
-## Design <hr>
+## Design 
 
 #### Color Scheme
 
 For my website I used the 'Canva' Pallete generator service to ensure a minimailistic, yet eye-catching and bright color scheme for my website.
-<p text-align="center"><img src="https://imgur.com/mDp6Qip" alt= "color-pallete image"></p>
+![Imgur](https://imgur.com/mDp6Qip)
 
 
 #### Wireframes
+
+![Home Page](https://imgur.com/1zFfsZR)
+
+![All Recipes page](https://imgur.com/8gKrdRN)
+
+![Register Page](https://imgur.com/MRRNYR9)
+
+![Upload Recipe Page](https://imgur.com/0wKGM3H)
+
+![View Recipe Page](https://imgur.com/8ZDxI8Q)
+
+
+#### Technoliges Used in Project
+
+
+
+
+[![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)] Git Version Control Hosting Service
+[![Gitpod](https://img.shields.io/badge/IDE-Gitpod-blue)] Primary IDE 
+
