@@ -1,6 +1,6 @@
 ![Imgur](https://imgur.com/ktzc6jU)
 
-#Cook Club: The online Cookbook
+# Cook Club: The online Cookbook
 
 
 In a world with rapidly changing culinary tastes and diets, this project was created with the goal of making it easy to share original and healthy recipes online. This website was developed for the target audience of amateur chefs who are able to use the platform to share their creative side in the kitchen. 
@@ -60,9 +60,8 @@ For my website I used the 'Canva' Pallete generator service to ensure a minimail
 
 #### Technoliges Used in Project
 
+<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
 
+<img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" />
 
-
-[![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)] Git Version Control Hosting Service
-[![Gitpod](https://img.shields.io/badge/IDE-Gitpod-blue)] Primary IDE 
-
+<img src="https://img.shields.io/badge/CSS-239120?style=for-the-badge&logo=css3&logoColor=white" />
