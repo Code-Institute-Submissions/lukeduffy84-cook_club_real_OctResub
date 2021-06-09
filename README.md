@@ -5,16 +5,6 @@
 
 In a world with rapidly changing culinary tastes and diets, this project was created with the goal of making it easy to share original and healthy recipes online. This website was developed for the target audience of amateur chefs who are able to use the platform to share their creative side in the kitchen. **Click [here](https://cook-club.herokuapp.com/) to view the deployed site**
 
-## Table of Contents
-
-* [UX](#userexperience)
-  * [User Goals](#user_goals)
-  * [Design](#design)
-* [Testing and Deployment](#features)
-  * [Validators](#validators) 
-  * [Deployments](#deployments) 
-* [Credits and References](#credits)
-
 
 # UX
 
