@@ -1,4 +1,4 @@
-![Imgur](https://imgur.com/ktzc6jU)
+![Imgur](https://imgur.com/ktzc6jU.jpg)
 
 # Cook Club: The online Cookbook
 
