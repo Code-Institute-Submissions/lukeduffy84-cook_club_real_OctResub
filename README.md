@@ -18,7 +18,7 @@ In a world with rapidly changing culinary tastes and diets, this project was cre
 
 # UX
 
-## User Goals<hr>
+## User Goals
 
 #### Non-registered Users
 
@@ -37,7 +37,7 @@ In a world with rapidly changing culinary tastes and diets, this project was cre
 - Allows logged in users to sign out of their profile on Cook Club by clicking on the 'Log Out' button within the navbar.
 
 
-## Design 
+# Design 
 
 #### Color Scheme
 
@@ -46,19 +46,19 @@ For my website I used the 'Canva' Pallete generator service to ensure a minimail
 
 
 #### Wireframes
-
+##### Home Page
 ![Home Page](https://imgur.com/1zFfsZR.png)
-
+##### All Recipes Page
 ![All Recipes page](https://imgur.com/8gKrdRN.png)
-
+##### Register Page
 ![Register Page](https://imgur.com/MRRNYR9.png)
-
+##### Upload Recipe Page
 ![Upload Recipe Page](https://imgur.com/0wKGM3H.png)
-
+##### View Recipe Page
 ![View Recipe Page](https://imgur.com/8ZDxI8Q.png)
 
 
-#### Technoliges Used in Project
+#### Technoliges Used
 
 <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
 
@@ -78,3 +78,10 @@ For my website I used the 'Canva' Pallete generator service to ensure a minimail
 
 
 
+# Testing and Deployment 
+
+#### Code Validators
+
+[![W3C HTML Validator](https://img.shields.io/badge/HTML%20Validator-W3C%20HTML%20Validator-red)](https://validator.w3.org/) Used to Validate HTML Code
+[![W3C CSS Validator](https://img.shields.io/badge/CSS%20Validator-W3C%20CSS%20Validator-darkred)](https://jigsaw.w3.org/css-validator/) Used to Validate CSS Code
+[![Pep8 Online](https://img.shields.io/badge/Python%20Validator-PEP8%20online-white)](http://pep8online.com/) Used to Validate Python Code
