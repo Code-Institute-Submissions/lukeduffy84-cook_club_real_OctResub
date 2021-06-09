@@ -13,9 +13,9 @@
             <div class="divider-custom-icon"><i class="fas fa-utensils fa-2x"></i></div>
             <div class="divider-custom-line"></div>
         </div>
-        <!-- Masthead Subheading-->
+       
         
-        
+        <!-- Recipe Search Input-->
         <form action="{{ url_for('search_api') }}" method="POST" enctype="multipart/form-data">
           <div class="input-group input-group-lg masthead-subheading font-weight-light mb-0" style="margin-top: 5%;">
               <input type="text" name="searchstring" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Search for your favorite recipes" size="50">
@@ -28,29 +28,35 @@
 
 
 {% block content %} 
+<!-- Edit Recipe Form -->
 <h2 class="page-section-heading text-center  text-secondary " style="margin-bottom: 2%; margin-top: -2%;">Edit Recipe</h2>
       <div class="row d-flex align-items-center justify-content-center">
           <div class="col-md-6">
             <form action="{{ url_for('change_recipe',recipieid=recipieid) }}" method="POST" enctype="multipart/form-data">
               <div class="mb-3">
+                <!-- Edit Recipe Name Input-->
                 <label for="exampleInputEmail1" class="form-label upload-title">Recipe Name</label>
                 <input type="text" name="recepiename" class="form-control" id="exampleInputPassword1" value="{{result.recipeName}}">
-                
+
               </div>
+              <!-- Edit Image URL Input-->
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label upload-title">Image URL</label>
                 <input type="text" name="imageurl" class="form-control" id="exampleInputPassword1" value="{{result.imageUrl}}">
+
               </div>
+              <!-- Edit Required Ingredients Input-->
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label upload-title">Required Ingredients</label>
                 <textarea name="ingredients" class="form-control" id="exampleFormControlTextarea1" rows="7" style="height:100%;" placeholder="Please put a comma after each ingredient">{{result.ingredients}}</textarea>
                 
               </div>
+              <!-- Edit Cooking Instructions Input-->
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label upload-title">Cooking Instructions</label>
                 <textarea name="instructions" class="form-control" id="exampleFormControlTextarea1" rows="12" style="height:100%;">{{result.instructions}}</textarea>
               </div>
-              
+              <!-- Meal Selector Radio Buttons-->
               <div class="form-check form-check-inline mb-3">
                 <input class="form-check-input" name="options" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Breakfast">
                 <label class="form-check-label upload-title" for="inlineRadio1">Breakfast</label>
@@ -67,6 +73,7 @@
                 <input class="form-check-input" name="options" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Snack">
                 <label class="form-check-label upload-title" for="inlineRadio1">Snack</label>
               </div>
+              <!-- Submit Button-->
               <div class="mb-3">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>
