@@ -12,7 +12,9 @@ def login_authorize(request, db_conn):
                 if "logintoken" in cookies
                 else "notoken"
             )
-            token_data = jwt.decode(logintoken, "SECRET", algorithms="HS256")
+            print("logintoken:",str(logintoken))
+            token = str(logintoken).split("'")[1] if "'" in logintoken else logintoken
+            token_data = jwt.decode(token, "SECRET", algorithms="HS256")
             token_user = token_data["username"]
             user_data = db_conn["users"].find_one({"username": token_user})
             if user_data is None:
