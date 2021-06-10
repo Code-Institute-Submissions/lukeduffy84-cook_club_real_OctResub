@@ -218,14 +218,15 @@ def view_recipe(recipieid):
         # this API only gives one output
         payload_filter = {"_id": ObjectId(recipieid)}
         response = single_recipe_controller(payload_filter, db_conn=db)[0]
+        isowner = False
         if islogin:
-            islogin = True if response["userid"] == login_data["_id"] else False
+            isowner = True if response["userid"] == login_data["_id"] else False
         # print("response :", response)
         response["username"] = get_user_name(response["userid"], db)
         response['ingredients'] = response['ingredients'].split(',')
 
         return render_template(
-            "view_recipe.html", result=response, hasresult=True, islogin=islogin
+            "view_recipe.html", result=response, hasresult=True, islogin=islogin, isowner=isowner
         )
     except Exception as e:
         print("Error-------------", e)
@@ -235,6 +236,7 @@ def view_recipe(recipieid):
 @app.route("/my_recepie")
 def my_recepie():
     login_data = login_authorize(request, db)
+    print("login_data----------------------------------------",login_data)
     islogin = True if login_data["success"] else False
     if not login_data["success"]:
         return redirect(url_for("login"))

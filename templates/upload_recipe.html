@@ -34,21 +34,21 @@
             <form action="{{ url_for('upload_recipe') }}" method="POST" enctype="multipart/form-data">
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label upload-title">Recipe Name</label>
-                <input type="text" name="recepiename" class="form-control" id="exampleInputPassword1">
+                <input type="text" name="recepiename" class="form-control" id="exampleInputPassword1" required>
                 
               </div>
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label upload-title">Image URL</label>
-                <input type="text" name="imageurl" class="form-control" id="exampleInputPassword1">
+                <input type="text" name="imageurl" class="form-control" id="exampleInputPassword1" required>
               </div>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label upload-title">Required Ingredients</label>
-                <textarea class="form-control" name="ingredients" id="exampleFormControlTextarea1" rows="7" style="height:100%;" placeholder="Please put a comma after each ingredient"></textarea>
+                <textarea class="form-control" name="ingredients" id="exampleFormControlTextarea1" rows="7" style="height:100%;" placeholder="Please put a comma after each ingredient" required></textarea>
                 
               </div>
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label upload-title">Cooking Instructions</label>
-                <textarea class="form-control" name="instructions" id="exampleFormControlTextarea1" rows="12" style="height:100%;"></textarea>
+                <textarea class="form-control" name="instructions" id="exampleFormControlTextarea1" rows="12" style="height:100%;" required></textarea>
               </div>
               
               <div class="form-check form-check-inline mb-3">
