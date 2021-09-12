@@ -137,6 +137,39 @@ For my website I used the 'Canva' Pallete generator service to ensure a minimail
 a master branch by one author at the following link: https://github.com/lukeduffy84/cook_club_real 
 - This project has been deployed on Heroku under the following URL: (https://cook-club.herokuapp.com/) 
 
+### Deploy Local Copy 
+1. Navigate to main page of repository on Github (https://github.com/lukeduffy84/cook_club_real)
+
+2. Clone the repository by first clicking on the 'Code' button followed by the 'Clone with HTTPS' option
+
+3. Open Git Bash, type 'git clone' and then paste the repository URL copied earlier 
+    https://github.com/lukeduffy84/cook_club_real
+
+4. Press Enter 
+
+5. Store Enviroment Variables 
+- Create .gitignore file in the root directory of the project and subsequently add the env.py file to the .gitignore
+- The env.py file will contain the following environment variables 
+ - MONGODB URI 
+ - MONGODB PASSWORD 
+ - Security Key 
+ - Port 5000 
+ - IP (0.0.0.0)
+
+### Heroku Deployment 
+1. Create a Heroku account 
+2. Navigate to to sites repository on Heroku website 
+3. Create New App
+4. Choose a region 
+5. Deploy on Github using Github Connect and URL
+6. Click Connect App
+7. Click build App 
+8. Click on 'Deploy branch' and enable 'Automatic Deploys'
+
+
+
+
+
 ## Media 
 - This project has used photos and recipe details from the BBC Food website, which can be found at the following URL: https://www.bbc.co.uk/food 
 
