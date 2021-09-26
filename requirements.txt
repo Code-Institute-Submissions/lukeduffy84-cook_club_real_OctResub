@@ -4,3 +4,4 @@ pymongo==3.11.3
 PyJWT==2.0.1
 dnspython==2.0.0
 gunicorn==19.9.0
+python-dotenv==0.10.3

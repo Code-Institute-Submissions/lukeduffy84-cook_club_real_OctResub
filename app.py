@@ -3,27 +3,30 @@ from flask import (
     render_template,
     request,
     redirect,
-    session,
     url_for,
     make_response,
-    jsonify,
 )
+import os
 import jwt
 from datetime import datetime, timedelta
 from database import db
 from controllers.login_authorize import login_authorize
 from controllers.users_controller import *
 from controllers.recipe_controller import *
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = "_5#y2L454brbn6567yu"
+app.secret_key = os.getenv('SECRET')
+
 
 @app.route('/')
 def index():
     login_data = login_authorize(request, db)
     islogin = True if login_data["success"] else False
     response = all_recipe_controller({}, db_conn=db)
-    return render_template('index.html',islogin=islogin, result=response)
+    return render_template('index.html', islogin=islogin, result=response)
 
 
 @app.route('/register', methods=["GET", "POST"])
@@ -45,7 +48,7 @@ def register():
                 creadedOn=datetime.now(),
             )
             response = signup_controller(payload=payload, db_conn=db)
-            print("response----------------------------", response,payload)
+            print("response----------------------------", response, payload)
             if response["success"]:
                 return redirect(url_for("login"))
             else:
@@ -54,7 +57,7 @@ def register():
 
         return render_template("register.html")
     except Exception as e:
-        print("error: ",e)
+        print("error: ", e)
         return render_template("404.html")
 
 
@@ -95,7 +98,7 @@ def login():
 
         return render_template("login.html")
     except Exception as e:
-        print("error: ",e)
+        print("error: ", e)
         return render_template("404.html")
 
 
@@ -107,7 +110,7 @@ def logout():
         resp.set_cookie("logintoken", expires=0)
         return resp
     except Exception as e:
-        print("error: ",e)
+        print("error: ", e)
         return render_template("404.html")
 
 
@@ -139,10 +142,11 @@ def upload_recipe():
             print("response---------", payload)
             return redirect(url_for("index"))
 
-        return render_template("upload_recipe.html",islogin=islogin)
+        return render_template("upload_recipe.html", islogin=islogin)
     except Exception as e:
-        print("error: ",e)
+        print("error: ", e)
         return render_template("404.html")
+
 
 @app.route("/change_recipe/<recipieid>", methods=["GET", "POST"])
 def change_recipe(recipieid):
@@ -175,9 +179,10 @@ def change_recipe(recipieid):
             print("Recipe updated successfully!")
             return redirect(url_for("index"))
 
-        return render_template("change_recipe.html", result=response, hasresult=True,recipieid=recipieid,islogin=islogin)
+        return render_template("change_recipe.html", result=response, hasresult=True, recipieid=recipieid,
+                               islogin=islogin)
     except Exception as e:
-        print("error: ",e)
+        print("error: ", e)
         return render_template("404.html")
 
 
@@ -196,7 +201,7 @@ def remove_recipe(recipieid):
         print("Recipe deleted successfully!")
         return redirect(url_for("my_recepie"))
     except Exception as e:
-        print("error: ",e)
+        print("error: ", e)
         return render_template("404.html")
 
 
@@ -206,7 +211,7 @@ def all_recipes():
     islogin = True if login_data["success"] else False
     response = all_recipe_controller({}, db_conn=db)
 
-    return render_template('all_recipes.html',islogin=islogin, result=response)
+    return render_template('all_recipes.html', islogin=islogin, result=response)
 
 
 @app.route('/view_recipe/<recipieid>', methods=["GET", "POST"])
@@ -236,7 +241,7 @@ def view_recipe(recipieid):
 @app.route("/my_recepie")
 def my_recepie():
     login_data = login_authorize(request, db)
-    print("login_data----------------------------------------",login_data)
+    print("login_data----------------------------------------", login_data)
     islogin = True if login_data["success"] else False
     if not login_data["success"]:
         return redirect(url_for("login"))
@@ -245,7 +250,6 @@ def my_recepie():
     response = all_recipe_controller(payload_filter, db_conn=db)
     print("response---", response)
     return render_template("my_recipe.html", name=login_data["name"], result=response, islogin=islogin)
-
 
 
 @app.route("/search", methods=["POST"])
@@ -270,9 +274,8 @@ def search_api():
         response = db["recipes"].find(collection_filter)
         result = map_response(response)
         is_search = True if len(result) > 0 else False
-        return render_template("search.html", result=result, is_search=is_search,islogin=islogin)
-
+        return render_template("search.html", result=result, is_search=is_search, islogin=islogin)
 
 
 if __name__ == "__main__":
-    app.run(debug= False,threaded=True, host='0.0.0.0', port=5000)
+    app.run(debug=False, threaded=True, host='0.0.0.0', port=5000)

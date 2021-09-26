@@ -1,5 +1,10 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 import pymongo
-client = pymongo.MongoClient("mongodb+srv://recepie:helloworld1!@cluster0.i8ody.mongodb.net/cook_club?retryWrites=true&w=majority")
+
+client = pymongo.MongoClient(os.getenv('MONGODB'))
 db = client["cook_club"]
 # print(db.list_collection_names())
