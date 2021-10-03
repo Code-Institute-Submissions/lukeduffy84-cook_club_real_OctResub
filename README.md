@@ -36,6 +36,11 @@ For my website I used the 'Canva' Pallete generator service to ensure a minimail
 
 ![Imgur](https://imgur.com/mDp6Qip.jpg)
 
+## Data Schema 
+
+I used MongoDB for the backend of this project, with the details of the schema and data types show below:
+![Imgur](https://imgur.com/tdLFbkr.jpg)
+
 
 ## Wireframes
 ### Home Page
